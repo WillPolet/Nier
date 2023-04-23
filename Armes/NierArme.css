@@ -1,0 +1,336 @@
+body{
+    margin-bottom: 20px;
+}
+
+.bg{
+    width: 100%;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#logo{
+    border: none;
+    padding: 0;
+}
+
+#image{
+    margin-left: 125px;
+    display: inline;
+}
+
+
+container{
+    background-color: rgba(48, 46, 46, 0.762);
+    width: 100%;
+    border: solid 1px white;
+    color: white;
+    display: block;
+}
+
+main{
+    margin: 20px;
+}
+
+
+hr{
+    background-color: aqua;
+    border: none;
+    height: 1px;
+}
+
+.center{
+    text-align: center;
+}
+
+PetiteEpee{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-template-rows: 150px 150px 150px;
+    justify-content: center;
+}
+EpeeLarge,Poings,Lances{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-template-rows: 150px 150px;
+    justify-content: center;
+}
+
+img{
+    display: block;
+    margin: auto;
+}
+
+h2{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color :rgb(37, 163, 163)
+}
+
+.bandeau{
+    background-color: #ffffffc9;
+}
+
+.PopOver{
+    width: 170%;
+    display: none;
+    background-color:rgb(82, 79, 79);
+    border-radius: 5px;
+    border: 1px solid white;
+    position: relative;
+    left: -70px;
+    /* justify-content: center; */ /* Ne fonctionne pas à cause du display block & none */
+}
+
+.PopOverUp{
+    width: 170%;
+    display: none;
+    background-color: rgb(82, 79, 79);
+    border-radius: 5px;
+    border: 1px solid white;
+    position: relative;
+    left: -70px;
+    top : -265px;
+}
+
+.Over:hover ~ .PopOver{
+    display: block;
+    z-index: 99999;
+}
+
+.Over:hover ~ .PopOverUp{
+    display: block;
+    z-index: 99999;
+}
+
+
+.TableOver{
+    border-collapse:separate;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.TableOver td{ /* Avec un espace ce seront tous les sous-éléments td d'un élément TableOver */
+    /* text-align: center; */
+    font-weight: 400;
+    margin: 10px;
+    font-size:small;
+    padding-left: 30px;
+}
+
+.TableOver caption{
+    margin: auto;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 2px;
+    width: 90%;
+    background-color: #ffffffc9;
+    color :rgb(37, 163, 163);
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+
+a,a:visited{
+    text-decoration: none;
+    color: rgb(37, 163, 163);
+}
+
+h3{
+    margin: 0;
+    padding: 5px;
+    color: #009797;
+}
+
+.bandeau2{
+    border-top: #009797 2px solid;
+    border-bottom: #009797 2px solid;
+    background-color: #ffffffc9;
+}
+
+/* Partie sur le menu déroulant -----------------------------------------------------------------------------------------*/
+
+nav{
+    width:100%;
+    /* margin: 0 auto; */
+    background-color: rgba(255, 255, 255, 0.836);
+    position: sticky; /* descend en même temps que la page et reste toujours visible (ici dans la div) */
+    top: 0px; /* Sert pour le sticky */
+    z-index: 5;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    position: relative;
+}
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover{  /* couleur est au survol tandis que hover est rajouté, mais fonctionne que dans contact et à propos */
+    color:rgb(37, 163, 163);
+    /* border-bottom: 2px solid gold; */
+    text-decoration: underline;
+    text-underline-offset: 5px; /* Règle l'espacement du soulignage */
+}
+
+.sous {
+    display: none;
+    box-shadow: 0px 1px 2px #ccc;
+    background-color: white;
+    position: absolute;
+    width: 60%; /* Permets de réduire la taille de la "box" en menu déroulant */
+    z-index: 1000;
+    margin: 0 21%; /* Permets de modifier le  */
+    padding: 0px;
+}
+
+nav > ul li:hover .sous{
+    display: block;
+}
+
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: center; /* positionne le texte dans les  */
+}
+
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+}
+
+.deroulant > a::after{
+    content : "▼" ;
+    font-size: 12px;
+}
+
+.conteneur{
+    margin: 50px 20px;
+    height: 1500px;
+  }
+
+/*--------------------------------------------------PopUp Tableau Arme test-------------------------------------------------------------*/
+
+.overlay {
+    position: fixed; /* Grâce à cela on peut scroll ça ne change rien */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999999;
+  }
+
+  .popup {
+    position: absolute;
+    width: 55%;
+    /* height: 60.5%; */
+    top: 20%;
+    left: 22.5%;
+    text-align: center;
+    background: rgba(62, 60, 60, 0.5);
+    border-radius: 3px;
+    /* border: 1px solid gray; */
+  }
+ 
+  .CloseIcon{
+    /* text-align: right; */
+    cursor: pointer;
+    color: rgb(37, 163, 163);
+  }
+
+  .wiki_table{
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+  }
+
+  .wiki_table td {
+    border: grey 1px solid;
+  }
+
+  .wiki_link{
+    display: inline;
+    max-width: 100%;
+    border-bottom: none;
+    color: #009797;
+
+  }
+
+  .wiki_table tr:hover {
+    background-color: #e7e4e4;
+    color: #009797;
+  }
+
+  .flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.fleche_gauche, .fleche_droite{
+    border: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    user-select: none;
+}
+
+.fleche_gauche:hover{
+    background-color: rgba(0, 0, 0, 0.26);
+    color: #009797;
+    user-select: none;
+}
+
+.fleche_droite:hover{
+    background-color: rgba(0, 0, 0, 0.26);
+    color: #009797;
+    user-select: none;
+}
+
+.inline{
+    background-color: rgb(82, 79, 79);
+    width: 100%;
+    border: solid 1px white;
+    color: white;
+    display: block;
+}
+
+.categorie{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px 10px 10px ;
+}

@@ -1,0 +1,148 @@
+/* *, ::before, ::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+body{
+    margin-bottom: 20px;
+}
+
+.bg{
+    width: 100%;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+h2{
+    color :rgb(37, 163, 163)
+}
+
+#logo{
+    border: none;
+    padding: 0;
+}
+
+#image{
+    margin-left: 125px;
+}
+
+.images{
+    margin-bottom: 20px;
+    border: 1px solid dimgray;
+}
+
+container{
+    background-color: rgba(48, 46, 46, 0.762);
+    width: 100%;
+    border: solid 1px white;
+    color: white;
+    display: block;
+}
+
+main{
+    margin: 20px;
+}
+
+
+hr{
+    background-color: aqua;
+    border: none;
+    height: 1px;
+}
+
+.corps{
+    display: flex;
+    justify-content: space-around; /* Pas assez de place ? Car le paragraphe est pas limité en taille ? */
+}
+
+.corps p{
+    width: 64%;
+    text-align: justify;
+}
+
+/* Partie sur le menu déroulant -----------------------------------------------------------------------------------------*/
+
+nav{
+    width:100%;
+    /* margin: 0 auto; */
+    background-color: rgba(255, 255, 255, 0.836);
+    position: sticky; /* descend en même temps que la page et reste toujours visible (ici dans la div) */
+    top: 0px; /* Sert pour le sticky */
+    z-index: 5;
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li{
+    float: left;
+    width: 25%;
+    text-align: center;
+    position: relative;
+}
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover{  /* couleur est au survol tandis que hover est rajouté, mais fonctionne que dans contact et à propos */
+    color:rgb(37, 163, 163);
+    /* border-bottom: 2px solid gold; */
+    text-decoration: underline;
+    text-underline-offset: 5px; /* Règle l'espacement du soulignage */
+}
+
+.sous {
+    display: none;
+    box-shadow: 0px 1px 2px #ccc;
+    background-color: white;
+    position: absolute;
+    width: 60%; /* Permets de réduire la taille de la "box" en menu déroulant */
+    z-index: 1000;
+    margin: 0 21%; /* Permets de modifier le  */
+    padding: 0px;
+}
+
+nav > ul li:hover .sous{
+    display: block;
+}
+
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: center; /* positionne le texte dans les  */
+}
+
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+
+.sous a:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+}
+
+.deroulant > a::after{
+    content : "▼" ;
+    font-size: 12px;
+}
+
+.conteneur{
+    margin: 50px 20px;
+    height: 1500px;
+  }
